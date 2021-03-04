@@ -174,7 +174,6 @@ Route::group(['middleware' => ['XSS']], function () {
 
 
 
-
         });
 
         Route::group(['prefix' => 'sale'], function () {
