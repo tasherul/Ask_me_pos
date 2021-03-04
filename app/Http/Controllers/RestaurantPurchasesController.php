@@ -485,5 +485,17 @@ class RestaurantPurchasesController extends Controller
         $purchase = RestaurantPurchaseIngredient::find($id);
         return view('pages.restaurant.purchase.purchase.purchase_modify',compact('purchase'));
     }
+    public function updatemodifys(Request $request){
 
+
+        $id =  $request->purches_id; // ingrediense id => 29
+
+        $quentity =  $request->quantity_amount; // 10
+
+        $total_amount = $request->quantity_amount; // 500
+
+        //ingrenense id to pursehses ingrediense id (29 -> 15)
+
+
+    }
 }

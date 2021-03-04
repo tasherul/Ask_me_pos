@@ -5,7 +5,7 @@ $baseURL = getBaseURL();
 
 
 /*******************************************************************************************************************
-* This secion is to construct menu list****************************************************************************
+* This secion is to construct menu list ****************************************************************************
 *******************************************************************************************************************
 */
 $shift_id = 0;
@@ -750,9 +750,9 @@ $order_list_left .= '<div data-started-cooking="'.$total_kitchen_type_started_co
                         <button class="category_next_prev" id="previous_category"><i class="fas fa-angle-left"></i></i></button>
                         <div class="select_category_inside">
                             <div class="select_category_inside_inside" id="catagory_button">
-                                
-                               
-                               
+
+
+
                             </div>
 
                         </div>
@@ -1908,7 +1908,7 @@ $order_list_left .= '<div data-started-cooking="'.$total_kitchen_type_started_co
 
 
         <script type="text/javascript">
-              function show_catagory(id) {
+            function show_catagory(id) {
                 $.ajax({
                     type: "GET",
                     url: "show_catagory_ajax/" + id,
@@ -1924,17 +1924,17 @@ $order_list_left .= '<div data-started-cooking="'.$total_kitchen_type_started_co
                         // $.each(data, function(i, item) {
                         //     alert(item.name);
                         // });
-                        var show='<button class="category_button" style="border-left: solid 2px #DEDEDE;">All</button>';
+                        var show = '<button class="category_button" style="border-left: solid 2px #DEDEDE;">All</button>';
                         for (var i = 0; i < data.length; i++) {
                             //alert(data[i].name);
-                           show+= '<button class="category_button" id="button_category_'+data[i].id+'"  style="border-left: solid 2px #DEDEDE;">'+data[i].name+'</button>';
+                            show += '<button class="category_button" id="button_category_' + data[i].id + '"  style="border-left: solid 2px #DEDEDE;">' + data[i].name + '</button>';
                         }
-                        document.getElementById("catagory_button").innerHTML=show;
+                        document.getElementById("catagory_button").innerHTML = show;
                     }
                 });
             }
 
-            
+
 
             $('#customer_phone_modal').inputmask("+19999999999");
 

@@ -28,13 +28,17 @@ $baseURL = getBaseURL()
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Purchase price</label>
-                                            <input type="hidden" id="$id">
-                                            <input type="text" class="form-control" value="{{$purchase->unit_price}}">
+                                            <input type="hidden" name="purches_id" value="{{$purchase->id}}"/>
+                                            <input type="text" name="unit_price" id="txtunit" class="form-control" readonly value="{{$purchase->unit_price}}">
                                         </div>
                                         <div class="form-group">
                                             <label>Alert Quantity</label>
-                                            <input type="hidden" id="$id">
-                                            <input type="text" class="form-control" value="{{$purchase->quantity_amount}}">
+                                            <input type="text" name="quantity_amount"  onkeyup="calculator();" id="txtquentity" class="form-control" value="{{$purchase->quantity_amount}}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Total</label>
+                                            <input type="text" name="quantity_amount" readonly id="txttotal" class="form-control" value="{{$purchase->total}}">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
@@ -74,5 +78,22 @@ $baseURL = getBaseURL()
     <script src="{!! $baseURL.'resources/assets/js/custom/serviceWorker.js'!!}"></script>
     <script src="{!! $baseURL.'resources/assets/js/custom/restaurant/purchases.js'!!}"></script>
 
+<script>
+    function  calculator()
+    {
+        var unitprice = 0.00;
 
+        unitprice =  $('#txtunit').val(); //(document.getElementById('txtunit').value);
+
+        var quantity = 0.00;
+
+        quantity =  $('#txtquentity').val(); //(document.getElementById('txtquentity').value);
+
+        var total = 0.00;
+
+        total = unitprice * quantity;
+        $('#txttotal').val(total);
+        //document.getElementById('txttotal').value = total;
+    }
+</script>
 @endsection

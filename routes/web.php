@@ -167,7 +167,7 @@ Route::group(['middleware' => ['XSS']], function () {
             Route::get('/purchases_details/{id}','RestaurantPurchasesController@detailsAll')->name('purchases_details');
             Route::get('/purchases_single/{id}', 'RestaurantPurchasesController@deletepurchases')->name('purchases_single.delete');
             Route::get('/purchases_modify/{id}','RestaurantPurchasesController@purchasesmodifys')->name('purchases_modify');
-            Route::get('/purchases_modify/{id}','RestaurantPurchasesController@purchasesmodifys')->name('purchases_modify');
+
 
 
 
