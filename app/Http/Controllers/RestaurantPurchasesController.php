@@ -487,15 +487,44 @@ class RestaurantPurchasesController extends Controller
     }
     public function updatemodifys(Request $request){
 
+        //------------- input ------------------
+        $ids =  $request->purches_id;
+        $quentity =  $request->quantity_amount;
+        $total_amount = $request->total;
+        //----------------------------------------
 
-        $id =  $request->purches_id; // ingrediense id => 29
+        // ------------ ingredience update --------------------------
+        $purchase = RestaurantPurchaseIngredient::find($ids);
+        $purchase->quantity_amount=$quentity;
+        $purchase->total=$total_amount;
+        $purchase->save();
 
-        $quentity =  $request->quantity_amount; // 10
+        // ------------ find purchus id by ingrdience id---------------
 
-        $total_amount = $request->quantity_amount; // 500
+        $pur= RestaurantPurchaseIngredient::where('id', $ids)->first();
 
-        //ingrenense id to pursehses ingrediense id (29 -> 15)
+        $purhas_id =  $pur->purchase_id;
+
+        //----------- sum total ingredinse in purches id
+
+        $total_quantity = DB::table('tbl_restaurant_purchase_ingredients')
+        ->where('purchase_id',$purhas_id)->sum('quantity_amount');
+
+        $total_amount_um = DB::table('tbl_restaurant_purchase_ingredients')
+            ->where('purchase_id',$purhas_id)->sum('total');
 
 
+        // ---------- purches table update by purches id----------- sub
+
+        $pu_up = RestaurantPurchase::find($purhas_id);
+        $pu_up->subtotal=$total_amount_um;
+        $pu_up->grand_total=$total_amount_um;
+        $pu_up->save();
+
+
+
+
+
+        return redirect('restaurant/purchase/purchases_details/'.$purhas_id);
     }
 }

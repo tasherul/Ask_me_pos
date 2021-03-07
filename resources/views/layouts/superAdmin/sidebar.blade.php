@@ -66,9 +66,17 @@ $baseURL = getBaseURL();
                     <a href="{{route('superAdmin.dashboard')}}">
                         <i data-feather="home"></i> <span>Adjustment</span></a>
                 </li>
-                <li>
-                    <a href="{{route('superAdmin.role')}}">
-                        <i data-feather="home"></i> <span>Roles</span></a>
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="shopping-cart"></i> <span>Roles</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('superAdmin.add_role')}}"><i class="fa fa-angle-double-right"></i>Group Role</a></li>
+                        <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>Rolse</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.settings')}}">
@@ -82,7 +90,7 @@ $baseURL = getBaseURL();
                     <a href="{{route('superAdmin.payment')}}">
                         <i data-feather="grid"></i> <span>Payment Methods</span></a>
                 </li>
-               
+
                 <li class="treeview">
                     <a href="{{route('superAdmin.report')}}">
                         <i data-feather="shopping-cart"></i> <span>Report</span>

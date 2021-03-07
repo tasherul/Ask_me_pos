@@ -54,6 +54,7 @@ Route::group(['middleware' => ['XSS']], function () {
 
 
         Route::get('/role','SuperAdminRoleController@role')->name('superAdmin.role');
+        Route::get('/add_role','SuperAdminRoleController@addrole')->name('superAdmin.add_role');
 
 
 
@@ -167,11 +168,7 @@ Route::group(['middleware' => ['XSS']], function () {
             Route::get('/purchases_details/{id}','RestaurantPurchasesController@detailsAll')->name('purchases_details');
             Route::get('/purchases_single/{id}', 'RestaurantPurchasesController@deletepurchases')->name('purchases_single.delete');
             Route::get('/purchases_modify/{id}','RestaurantPurchasesController@purchasesmodifys')->name('purchases_modify');
-
-
-
-
-
+            Route::post('/modify_update','RestaurantPurchasesController@updatemodifys')->name('update.modify_update');
 
 
         });

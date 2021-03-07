@@ -1,5 +1,4 @@
 @php
-
 $baseURL = getBaseURL();
 //dd($baseURL);
 
@@ -15,13 +14,7 @@ $i = 1;
 $menu_to_show = "";
 $javascript_obects = "";
 
-// function cmp($a, $b)
-// {
-// return strcmp($a['cat_id'], $b['cat_id']);
-// }
 
-// $food_menus_array = $food_menus->toArray();
-// usort($food_menus_array, "cmp");
 if ($shift) {
 # code...
 $shift_id = $shift->id;
@@ -751,6 +744,13 @@ $order_list_left .= '<div data-started-cooking="'.$total_kitchen_type_started_co
                         <div class="select_category_inside">
                             <div class="select_category_inside_inside" id="catagory_button">
 
+                            @if ($categories)
+                                @foreach ($categories as $ct)
+
+                                <button class="category_button" id="button_category_{{$ct->id}}"  style="border-left: solid 2px #DEDEDE;">{{$ct->name}}</button>
+
+                                @endforeach
+                                @endif
 
 
                             </div>
@@ -1939,10 +1939,14 @@ $order_list_left .= '<div data-started-cooking="'.$total_kitchen_type_started_co
             $('#customer_phone_modal').inputmask("+19999999999");
 
             $('.select2').select2();
-            window.customers = [<?php echo $customer_objects; ?>];
+            window.customers = [<?php //echo $customer_objects; 
+                                ?>];
 
-            window.items = [<?php echo $javascript_obects; ?>];
+            window.items = [<?php echo $javascript_obects; 
+                            ?>];
 
+            var jsonData = window.items;
+            alert(jsonData[0].category_name);
             console.log(window.items);
 
             function searchItemAndConstructGallery(searchedValue) {

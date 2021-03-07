@@ -55,7 +55,7 @@ class RestaurantPosController extends Controller
         // return $thirdPartyVendors;
 
 
-        //$categories = RestaurantFoodMenuCategory::where('restaurant_id', Auth::guard('restaurantUser')->user()->restaurant_id)->where('del_status', 'Live')->orderBy('updated_at', 'desc')->get();
+        $categories = RestaurantFoodMenuCategory::where('restaurant_id', Auth::guard('restaurantUser')->user()->restaurant_id)->where('del_status', 'Live')->orderBy('updated_at', 'desc')->get();
         $subcategories=DB::table('table_sub_category')->get();
         $floors = RestaurantFloor::where('restaurant_id', Auth::guard('restaurantUser')->user()->restaurant_id)->where('del_status', 'Live')->orderBy('updated_at', 'desc')->get();
         $waiters = RestaurantUser::where('restaurant_id', Auth::guard('restaurantUser')->user()->restaurant_id)->where('role', 'waiter')->where('del_status', 'Live')->orderBy('updated_at', 'desc')->get();
@@ -195,7 +195,7 @@ class RestaurantPosController extends Controller
 
         $new_orders = $t;
         //return count($t);
-        return view('pages.restaurant.sale.sales.pos', compact('thirdPartyVendors', 'shift', 'countries', 'customerGroups', 'restaurant', 'notifications', 'subcategories', 'food_menus', 'floors', 'waiters', 'customers', 'new_orders'));
+        return view('pages.restaurant.sale.sales.pos', compact('thirdPartyVendors', 'shift', 'countries', 'customerGroups', 'restaurant', 'notifications', 'subcategories', 'food_menus', 'floors', 'waiters', 'customers', 'new_orders','categories'));
     }
 
     /**

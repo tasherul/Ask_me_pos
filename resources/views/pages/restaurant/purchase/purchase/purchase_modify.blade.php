@@ -21,14 +21,15 @@ $baseURL = getBaseURL()
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <!-- form start -->
-                        <form method="post" action="">
+                        <form method="POST" action="{{route('update.modify_update')}}">
                             @csrf
+                            @php $myid = $purchase->id; @endphp
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Purchase price</label>
-                                            <input type="hidden" name="purches_id" value="{{$purchase->id}}"/>
+                                            <input type="hidden" name="purches_id" value="{{$myid}}"/>
                                             <input type="text" name="unit_price" id="txtunit" class="form-control" readonly value="{{$purchase->unit_price}}">
                                         </div>
                                         <div class="form-group">
@@ -38,12 +39,12 @@ $baseURL = getBaseURL()
 
                                         <div class="form-group">
                                             <label>Total</label>
-                                            <input type="text" name="quantity_amount" readonly id="txttotal" class="form-control" value="{{$purchase->total}}">
+                                            <input type="text" name="total" readonly id="txttotal" class="form-control" value="{{$purchase->total}}">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <label>Submit</label><br>
-                                        <button type="submit" class="btn btn-primary">submit
+                                        <button type="submit"  class="btn btn-primary">Submit
                                         </button>
                                     </div>
                                     <div class="col-md-1">
