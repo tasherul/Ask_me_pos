@@ -6,6 +6,7 @@ use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use phpDocumentor\Reflection\Types\False_;
 
 class CountriesController extends Controller
 {
@@ -151,5 +152,36 @@ class CountriesController extends Controller
             // redirect
             return redirect()->route('countries.index');
         }
+    }
+    public function csvadd(Request $request){
+
+//        $f = $_FILES['filecvs']['name'];
+//
+//        if($_FILES['filecvs']['size'] > 0){
+//            $myfile= fopen($f,'r');
+//
+//            while (($a = fgetcsv($myfile,100,","))!==FALSE){
+//                    echo $myfile;
+//            }
+//        }
+//        $handle = fopen($_FILES['filename']['tmp_name'], "r");
+//        $headers = fgetcsv($handle, 1000, ",");
+//        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
+//        {
+//            $data[0];
+//            $data[1];
+//        }
+//        fclose($handle);
+
+
+
+
+
+//        $myfile= fopen($f,'r');
+//        while($row = fgetcsv($myfile)){
+//            var_dump($row);
+
+
+//        echo $_FILES['filecvs']['tmp_name'];
     }
 }

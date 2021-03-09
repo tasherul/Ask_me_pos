@@ -23,59 +23,59 @@ $baseURL = getBaseURL();
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>All Service</span></a>
+                        <i data-feather="server"></i> <span>All Service</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Dashboard</span></a>
+                        <i data-feather="database"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Sale</span></a>
+                        <i data-feather="trending-up"></i> <span>Sale</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Inventory</span></a>
+                        <i data-feather="shopping-bag"></i> <span>Inventory</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Inventory Adjustment </span></a>
+                        <i data-feather="edit"></i> <span>Inventory Adjustment </span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Waste</span></a>
+                        <i data-feather="trash-2"></i> <span>Waste</span></a>
                 </li>
 
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Example</span></a>
+                        <i data-feather="archive"></i> <span>Example</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Supplier Due Payment</span></a>
+                        <i data-feather="dollar-sign"></i> <span>Supplier Due Payment</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Customer Due Payment </span></a>
+                        <i data-feather="dollar-sign"></i> <span>Customer Due Payment </span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Sand Sms</span></a>
+                        <i data-feather="send"></i> <span>Send SMS</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.dashboard')}}">
-                        <i data-feather="home"></i> <span>Adjustment</span></a>
+                        <i data-feather="bar-chart-2"></i> <span>Adjustment</span></a>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i data-feather="shopping-cart"></i> <span>Roles</span>
+                        <i data-feather="tool"></i> <span>Roles</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{route('superAdmin.add_role')}}"><i class="fa fa-angle-double-right"></i>Group Role</a></li>
-                        <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>Rolse</a></li>
+                        <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>Role</a></li>
                     </ul>
                 </li>
                 <li>
@@ -84,16 +84,16 @@ $baseURL = getBaseURL();
                 </li>
                 <li>
                     <a href="{{route('superAdmin.restaurantList')}}">
-                        <i data-feather="grid"></i> <span>Restaurant List</span></a>
+                        <i data-feather="align-center"></i> <span>Restaurant List</span></a>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.payment')}}">
-                        <i data-feather="grid"></i> <span>Payment Methods</span></a>
+                        <i data-feather="credit-card"></i> <span>Payment Methods</span></a>
                 </li>
 
                 <li class="treeview">
                     <a href="{{route('superAdmin.report')}}">
-                        <i data-feather="shopping-cart"></i> <span>Report</span>
+                        <i data-feather="sliders"></i> <span>Report</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>

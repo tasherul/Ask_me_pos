@@ -27,7 +27,7 @@ $baseURL = getBaseURL()
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <!-- form start -->
-                        
+
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -69,8 +69,8 @@ $baseURL = getBaseURL()
                         <div class="box box-primary">
                             <!-- /.box-header -->
                             <div class="box-body table-responsive">
-                            
-                                <h3>All Expense Category </h3> 
+
+                                <h3>All Expense Category </h3>
 
 
                                     <div class="d-flex justify-content-end" style="padding: 10px 0 30px 0">
@@ -94,7 +94,6 @@ $baseURL = getBaseURL()
                                                         <td>{{$key->id}}</td>
                                                         <td>{{$key->name}}</td>
                                                         <td>{{$key->description}}</td>
-                                                        
                                                         <td>{{$key->user_id}}</td>
                                                         <td>{{$key->restaurant_id}}</td>
                                                         <td>
@@ -105,7 +104,7 @@ $baseURL = getBaseURL()
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                                                                     <a class="dropdown-item edit-link" role="button" href="Edit-Expence/{{$key->id}}">Edit</a> |
                                                                     <a class="dropdown-item delete-customer"href="Delete-Expence/{{$key->id}}">Delete</a>
-                                                            
+
                                                                 </div>
                                                             </div>
                                                         </td>

@@ -23,7 +23,7 @@ $baseURL = getBaseURL()
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <!-- form start -->
-                        
+
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-md-6">

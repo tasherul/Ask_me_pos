@@ -26,7 +26,7 @@ $baseURL = getBaseURL();
 
                 <li class="treeview">
                     <a href="#">
-                        <i data-feather="file-text"></i> <span>Purchase</span>
+                        <i data-feather="shopping-bag"></i> <span>Purchase</span>
                         <span class="pull-right-container">
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </span>
@@ -46,12 +46,12 @@ $baseURL = getBaseURL();
                 </li>
                 <li>
                     <a href="{{route('supplier_due')}}">
-                        <i data-feather="coffee"></i> <span>Supplier Due Payments</span>
+                        <i data-feather="credit-card"></i> <span>Supplier Due Payments</span>
                     </a>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i data-feather="shopping-cart"></i> <span>Sale</span>
+                        <i data-feather="trending-up"></i> <span>Sale</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -83,7 +83,7 @@ $baseURL = getBaseURL();
 
                 <li>
                     <a href="{{route('inventory_adjustments')}}">
-                        <i data-feather="coffee"></i> <span>Inventory Adjustments</span>
+                        <i data-feather="edit"></i> <span>Inventory Adjustments</span>
                     </a>
                 </li>
 
@@ -104,7 +104,7 @@ $baseURL = getBaseURL();
                         <li><a href="{{route('expense-items.index')}}"><i class="fa fa-angle-double-right"></i>Expense Items</a></li>
                         <li><a href="{{route('expenses.index')}}"><i class="fa fa-angle-double-right"></i>Expenses</a></li>
                         <li><a href="{{route('expenses.add_expenses_category')}}"><i class="fa fa-angle-double-right"></i>Expenses Category</a></li>
-                        
+
                     </ul>
                 </li>
 
@@ -176,7 +176,7 @@ $baseURL = getBaseURL();
                     </ul>
                 </li>
 
-                
+
             </ul>
         </div>
     </section>

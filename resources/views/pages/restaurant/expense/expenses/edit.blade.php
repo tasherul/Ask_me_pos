@@ -8,7 +8,7 @@ $baseURL = getBaseURL()
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Add Expense 
+                Add Expense
             </h1>
         </section>
 
@@ -18,7 +18,7 @@ $baseURL = getBaseURL()
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <!-- form start -->
-                        <form method="post" action="{{route('expenses.update', [$expense->id])}}">
+                        <form method="post" action="{{route('expenses.update',[$expense->id])}}">
                             @csrf
                             <input type="hidden" name="_method" value="PUT">
                             <div class="box-body">
@@ -58,7 +58,7 @@ $baseURL = getBaseURL()
                                                 @endforeach
                                             </select>
                                         </div>
-                                        
+
                                         @if ($errors->has('category_id'))
                                             <div class="alert alert-error" style="padding: 5px !important;">
                                                 <p>{{ $errors->first('category_id') }}</p>
@@ -77,7 +77,7 @@ $baseURL = getBaseURL()
                                                 @endforeach
                                             </select>
                                         </div>
-                                        
+
                                         @if ($errors->has('employee_id'))
                                             <div class="alert alert-error" style="padding: 5px !important;">
                                                 <p>{{ $errors->first('employee_id') }}</p>

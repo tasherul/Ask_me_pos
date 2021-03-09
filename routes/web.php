@@ -45,18 +45,20 @@ Route::group(['middleware' => ['XSS']], function () {
 
 
     Route::group(['prefix' => 'SuperAdmin'], function () {
-
-
         Route::get('/payment','SuperAdminPaymentController@payment')->name('superAdmin.payment');
         Route::get('/addpayment','SuperAdminPaymentController@addPayment')->name('superAdmin.addPayment');
 
         Route::get('/report','SuperAdminPaymentController@report')->name('superAdmin.report');
 
-
+        //ROLE Controller//
         Route::get('/role','SuperAdminRoleController@role')->name('superAdmin.role');
-        Route::get('/add_role','SuperAdminRoleController@addrole')->name('superAdmin.add_role');
 
 
+        Route::get('/subcreate','SuperAdminRoleController@addrole')->name('superAdmin.add_role');
+        Route::post('/subcreate','SuperAdminRoleController@role_insert')->name('superAdmin.role-insert');
+        Route::get('/Edit-Role/{id}','SuperAdminRoleController@edit_role')->name('Edit-Role');
+        Route::get('/Delete-Role/{id}','SuperAdminRoleController@delete_role')->name('Delete-Role');
+        Route::post('/update-role', 'SuperAdminRoleController@csvadd')->name('update-role');
 
 
 
@@ -73,6 +75,8 @@ Route::group(['middleware' => ['XSS']], function () {
 
             Route::resource('countries', 'CountriesController');
             Route::get('countries/{id}/delete', 'CountriesController@delete')->name('countries.delete');
+            Route::post('countries-csv', 'CountriesController@csvadd')->name('countries.csv');
+
 
             Route::resource('states', 'StatesController');
             Route::get('states/{id}/delete', 'StatesController@delete')->name('states.delete');

@@ -18,11 +18,34 @@ $baseURL = getBaseURL()
                     <div class="box box-primary">
                         <!-- /.box-header -->
                         <div class="box-body table-responsive">
-                            <h3>Countries</h3>
+
+
                             <div class="d-flex justify-content-end" style="padding: 10px 0 30px 0">
-                                <a role="button" class="btn btn-primary" href="{{route('countries.create')}}">Add
-                                    Country
-                                </a>
+
+                                <div class="row">
+
+                                    <div class="col-md-2">
+                                        <label>Countries</label>
+                                        <a role="button" class="btn btn-primary form-control"  href="{{route('countries.create')}}">Add
+                                            Country
+                                        </a>
+                                    </div>
+
+<div class="col-md-2"></div>
+                                    <form method="post" id="upload_csv" action="{{route('countries.csv')}}" enctype="multipart/form-data" >
+                                        @csrf
+
+                                            <div class="col-md-4">
+                                                <label>Import</label>
+                                                <input class="form-control" name="filecvs" type="file" accept=".csv" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Save</label>
+                                                <button type="submit" name="submit"  class="btn btn-primary form-control">Import CSV File</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
                             </div>
                             <table id="datatable" class="table table-striped">
                                 <thead>

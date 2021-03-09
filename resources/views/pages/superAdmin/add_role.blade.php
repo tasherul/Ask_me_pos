@@ -21,25 +21,24 @@ $baseURL = getBaseURL()
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form method="Post" action="">
+                                    <form method="Post" action="{{route('superAdmin.role-insert')}}">
                                         @csrf
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input  type="text"  class="form-control"
-                                                    placeholder="category" >
+                                            <input  type="text"  class="form-control" name="user_name"
+                                                    placeholder="Name" >
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text"  class="form-control"
+                                            <input type="text"  class="form-control" name="description"
                                                    placeholder="Description">
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox"  class="form-check-input" value="on" checked>
+                                                <input type="checkbox" name="del_status" class="form-check-input" value="Live" checked>
                                                 Live
                                             </label>
                                         </div>
-
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary">
                                                 Submit
@@ -65,35 +64,32 @@ $baseURL = getBaseURL()
                                 <thead>
                                 <tr>
                                     <th class="title" style="width: 5%">SN</th>
-                                    <th class="title" style="width: 20%">Name</th>
-                                    <th class="title" style="width: 15%">Delay in Minute</th>
+                                    <th class="title" style="width: 20%">Restaurant Id</th>
+                                    <th class="title" style="width: 25%">Name</th>
                                     <th class="title" style="width: 25%">Description</th>
-                                    <th class="title" style="width: 20%">Added By</th>
                                     <th class="title" style="width: 15%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-light btn-fill dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-offset="-185,-75">
-                                                    <i class="mdi mdi-mine tiny-icon" aria-hidden="true"></i><span class="caret"></span>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                                                    <a class="dropdown-item edit-link" role="button" href="">Edit</a> |
-                                                    <a class="dropdown-item delete-customer"href="">Delete</a>
-
+                                    @foreach($all_data as $v_data)
+                                        <tr>
+                                            <td>{{$v_data->id}}</td>
+                                            <td>{{$v_data->restaurant_id}}</td>
+                                            <td>{{$v_data->user_name}}</td>
+                                            <td>{{$v_data->description}}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-light btn-fill dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-offset="-185,-75">
+                                                        <i class="mdi mdi-mine tiny-icon" aria-hidden="true"></i><span class="caret"></span>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                                                        <a class="dropdown-item edit-link" role="button" href="Edit-Role/{{$v_data->id}}">Edit</a> |
+                                                        <a class="dropdown-item delete-customer"href="Delete-Role/{{$v_data->id}}">Delete</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -17,8 +17,8 @@ class RestaurantExpensesController extends Controller
         $this->middleware('restaurantUser');
         auth()->setDefaultDriver('restaurantUser');
     }
-    
-    
+
+
     /**
      * Display a listing of the resource.
      *
@@ -84,8 +84,8 @@ class RestaurantExpensesController extends Controller
             // redirect
             return redirect()->route('expenses.index');
         }
-        
-        
+
+
     }
 
     /**
@@ -107,7 +107,7 @@ class RestaurantExpensesController extends Controller
      */
     public function edit($id)
     {
-        
+
 
         if (Auth::guard('restaurantUser')->id() == RestaurantExpense::find($id)->user_id) {
 
@@ -220,7 +220,7 @@ class RestaurantExpensesController extends Controller
 
         }
 
-        
+
         return response()->json(['expenses' => $expenses]);
     }
 
@@ -231,7 +231,7 @@ class RestaurantExpensesController extends Controller
         $resturent = Auth::guard('restaurantUser')->user()->restaurant_id;
 
         $all_data = DB::table('tbl_restaurant_expense_items')->get();
-       
+
         return view('pages.restaurant.expense.expenses.add_expenses_category',compact("all_data"));
     }
 
@@ -247,7 +247,7 @@ class RestaurantExpensesController extends Controller
         );
         DB::table('tbl_restaurant_expense_items')->insert($data);
         return back()->with('success','sucessfully Insert.');
-    
+
     }
     public function delete_expensesCategorys($id)
     {
@@ -259,7 +259,6 @@ class RestaurantExpensesController extends Controller
 
     public function edit_expensesCategorys($id)
     {
-
         $edit_expenses = DB::table('tbl_restaurant_expense_items')
             ->where('id', $id)
             ->first();
