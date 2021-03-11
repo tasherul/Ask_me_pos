@@ -11,6 +11,16 @@ $baseURL = getBaseURL()
 
 @section('content')
     <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                All Staff
+            </h1>
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <p style="color: red;"> {{ session('success') }}</p>
+                </div>
+            @endif
+        </section>
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
@@ -18,31 +28,31 @@ $baseURL = getBaseURL()
                     <div class="box box-primary">
                         <!-- /.box-header -->
                         <div class="box-body table-responsive">
-                            <h3>Ingredient Categories</h3>
-                            <div class="d-flex justify-content-end" style="padding: 10px 0 30px 0">
-                                <a role="button" class="btn btn-primary"
-                                   href="{{route('ingredient-categories.create')}}">Add Ingredient Category
-                                </a>
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                </div>
+                                <div class="hidden-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                             </div>
                             <table id="datatable" class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th class="title" style="width: 5%">SN</th>
-                                    <th class="title" style="width: 25%">Category Name</th>
-                                    <th class="title" style="width: 25%">Description</th>
-                                    {{--<th class="title" style="width: 25%">Added By</th>--}}
-                                    <th class="title" style="width: 20%">Action</th>
+                                    <th class="title text-center">SN</th>
+                                    <th class="title text-center">Name</th>
+                                    <th class="title text-center">Phone</th>
+                                    <th class="title text-center">Email</th>
+                                    <th class="title text-center">Role</th>
+                                    <th class="title text-center">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                @if(count($categories) > 0)
-                                    @foreach($categories as $k=>$v)
-                                        <tr>
-                                            <th scope="row">{{$k + 1}}</th>
-                                            <td>{{$v->name}}</td>
-                                            <td>{{$v->description}}</td>
-                                            {{--<td>{{$v->creatorInfo->manager_name}}</td>--}}
-                                            <td>
+                                <tbody class="purchase_body">
+                                @foreach($staff as $v_staff)
+                                        <tr class="purchase_row">
+                                            <td class="text-center">{{$v_staff->id}}</td>
+                                            <td class="text-center">{{$v_staff->manager_name}}</td>
+                                            <td class="text-center">{{$v_staff->manager_phone}}</td>
+                                            <td class="text-center">{{$v_staff->manager_email}}</td>
+                                            <td class="text-center">{{$v_staff->roleName}}</td>
+                                            <td class="text-center">
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-light btn-fill dropdown-toggle"
                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -50,19 +60,15 @@ $baseURL = getBaseURL()
                                                         <i class="mdi mdi-mine tiny-icon" aria-hidden="true"></i><span
                                                             class="caret"></span>
                                                     </button>
-                                                    <div
-                                                        class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                                                         <a class="dropdown-item edit-link" role="button"
-                                                           href="{{route('ingredient-categories.edit', [$v->id])}}">Edit</a>
-                                                        |
-                                                        <a class="dropdown-item delete-ingredient-category"
-                                                           role="button" data-id="{{$v->id}}">Delete</a>
+                                                           href="Edit-staff/{{$v_staff->id}}">Edit</a> |
+                                                            <a class="dropdown-item delete-customer" role="button" href="Delete-Staff/{{$v_staff->id}}">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endforeach
-                                @endif
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -85,5 +91,6 @@ $baseURL = getBaseURL()
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
 
-    <script src="{!! $baseURL.'resources/assets/js/custom/restaurant/ingredientCategories.js'!!}"></script>
+    <script src="{!! $baseURL.'resources/assets/js/custom/serviceWorker.js'!!}"></script>
+    <script src="{!! $baseURL.'resources/assets/js/custom/restaurant/purchases.js'!!}"></script>
 @endsection

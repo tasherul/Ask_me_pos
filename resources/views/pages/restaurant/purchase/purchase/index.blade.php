@@ -76,7 +76,6 @@ $baseURL = getBaseURL()
                                     <th class="title text-center">Ingredients</th>
                                     <th class="title text-center">G. Total</th>
                                     <th class="title text-center">Due</th>
-                                    <th class="title text-center">Added By</th>
                                     <th class="title text-center">Action</th>
                                 </tr>
                                 </thead>
@@ -94,7 +93,6 @@ $baseURL = getBaseURL()
                                             </td>
                                             <td class="text-center">{{$v->grand_total}}</td>
                                             <td class="text-center">{{$v->due}}</td>
-                                            <td class="text-center">{{$v->creatorInfo->manager_name}}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-light btn-fill dropdown-toggle"

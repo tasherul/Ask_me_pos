@@ -36,7 +36,7 @@ $baseURL = getBaseURL()
                                             <th scope="row">{{$k + 1}}</th>
                                             <td>{{$v->name}}</td>
                                             <td>{{$v->description}}</td>
-                                            <td>{{$v->creatorInfo->manager_name}}</td>
+                                            {{--<td>{{$v->creatorInfo->manager_name}}</td>--}}
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-light btn-fill dropdown-toggle"

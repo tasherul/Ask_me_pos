@@ -30,7 +30,7 @@ $baseURL = getBaseURL()
                                     <th class="title" style="width: 5%">SN</th>
                                     <th class="title" style="width: 20%">Name</th>
                                     <th class="title" style="width: 25%">Description</th>
-                                    <th class="title" style="width: 20%">Added By</th>
+                                   {{-- <th class="title" style="width: 20%">Added By</th>--}}
                                     <th class="title" style="width: 15%">Action</th>
                                 </tr>
                                 </thead>
@@ -41,7 +41,7 @@ $baseURL = getBaseURL()
                                             <th scope="row">{{$k + 1}}</th>
                                             <td>{{$v->name}}</td>
                                             <td>{{$v->description}}</td>
-                                            <td>{{$v->creatorInfo->manager_name}}</td>
+                                           {{-- <td>{{$v->creatorInfo->manager_name}}</td>--}}
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-light btn-fill dropdown-toggle"

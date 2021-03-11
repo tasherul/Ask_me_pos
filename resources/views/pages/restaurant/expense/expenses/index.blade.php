@@ -54,18 +54,18 @@ $baseURL = getBaseURL()
                                     <div class="col-md-1">
                                         <button type="submit" id="filter_expense_submit" class="btn btn-block btn-primary pull-left">Submit</button>
                                     </div>
-                                
+
                                 </form>
                                 <div class="hidden-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                                 <div class="col-md-5 text-right">
                                     <ul class="list-inline text-right">
-                                        
+
                                         <li>
                                             <a href="{{route('expenses.create')}}"><button type="button" class="btn btn-block btn-primary pull-right">Add Expense</button></a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div> 
+                            </div>
                             <table id="datatable" class="table table-striped">
                                 <thead>
                                 <tr>
@@ -73,9 +73,9 @@ $baseURL = getBaseURL()
                                     <th class="title text-center" >Date</th>
                                     <th class="title text-center" >Amount</th>
                                     <th class="title text-center" >Category</th>
-                                    <th class="title text-center" >Responsible Person</th>
+                                    {{--<th class="title text-center" >Responsible Person</th>--}}
                                     <th class="title text-center" >Note</th>
-                                    <th class="title text-center" >Added By</th>
+                                   {{-- <th class="title text-center" >Added By</th>--}}
                                     <th class="title text-center" >Action</th>
                                 </tr>
                                 </thead>
@@ -87,9 +87,9 @@ $baseURL = getBaseURL()
                                                 <td class="text-center">{{$v->date}}</td>
                                                 <td class="text-center">{{$v->amount}}</td>
                                                 <td class="text-center">{{$v->expenseItem->name}}</td>
-                                                <td class="text-center">{{$v->employee->manager_name}}</td>
+                                                {{--<td class="text-center">{{$v->employee->manager_name}}</td>--}}
                                                 <td class="text-center">{{$v->note}}</td>
-                                                <td class="text-center">{{$v->creatorInfo->manager_name}}</td>
+                                              {{--  <td class="text-center">{{$v->creatorInfo->manager_name}}</td>--}}
                                                 <td class="text-center">
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-light btn-fill dropdown-toggle"

@@ -52,13 +52,17 @@ Route::group(['middleware' => ['XSS']], function () {
 
         //ROLE Controller//
         Route::get('/role','SuperAdminRoleController@role')->name('superAdmin.role');
-
-
-        Route::get('/subcreate','SuperAdminRoleController@addrole')->name('superAdmin.add_role');
-        Route::post('/subcreate','SuperAdminRoleController@role_insert')->name('superAdmin.role-insert');
+        Route::get('/add_role','SuperAdminRoleController@addrole')->name('superAdmin.add_role');
+        Route::post('/role_insert','SuperAdminRoleController@roleinsert')->name('superAdmin.role_insert');
         Route::get('/Edit-Role/{id}','SuperAdminRoleController@edit_role')->name('Edit-Role');
         Route::get('/Delete-Role/{id}','SuperAdminRoleController@delete_role')->name('Delete-Role');
         Route::post('/update-role', 'SuperAdminRoleController@csvadd')->name('update-role');
+
+//------------------STAFF-------------------//
+        Route::get('/Staff','SuperAdminRoleController@staff')->name('superAdmin.Staff');
+        Route::post('/add-staff','SuperAdminRoleController@addstaff')->name('superAdmin.add-staff');
+
+
 
 
 
@@ -68,6 +72,20 @@ Route::group(['middleware' => ['XSS']], function () {
         Route::get('/logout', 'SuperAdminAuthController@logout')->name('superAdmin.logout');
 
         Route::get('/dashboard', 'SuperAdminDashboardController@dashboard')->name('superAdmin.dashboard');
+
+        //all ---------------------
+        Route::get('/other_list', 'SuperAdminDashboardController@otherlist')->name('superAdmin.other_list');
+        Route::get('/All-Service', 'SuperAdminDashboardController@allService')->name('superAdmin.All-Service');
+        Route::get('/Sale', 'SuperAdminDashboardController@sale')->name('superAdmin.Sale');
+        Route::get('/Inventory', 'SuperAdminDashboardController@inventory')->name('superAdmin.Inventory');
+        Route::get('/Inventory_Adjustment', 'SuperAdminDashboardController@inventoryadjustment')->name('superAdmin.Inventory_Adjustment');
+        Route::get('/waste', 'SuperAdminDashboardController@waste')->name('superAdmin.waste');
+
+
+
+
+
+
 
         Route::group(['prefix' => 'settings'], function () {
 
@@ -132,6 +150,24 @@ Route::group(['middleware' => ['XSS']], function () {
         Route::get('/logout', 'RestaurantAuthController@logout')->name('restaurant.logout');
 
         Route::get('/home', 'RestaurantHomeController@home')->name('restaurant.home');
+
+        //----Staff Restaurant---------
+
+        Route::get('/staff-restaurant', 'RestaurantHomeController@staff')->name('restaurant.staff');
+        Route::post('/add-staff','RestaurantHomeController@addstaff')->name('restaurant.add-staff');
+        Route::get('/all-staff-restaurant', 'RestaurantHomeController@allstaff')->name('all-staff-restaurant');
+        Route::get('/Delete-Staff/{id}', 'RestaurantHomeController@deletestaff')->name('Delete-Staff');
+        Route::get('/Edit-staff/{id}','RestaurantHomeController@editstaff')->name('Edit-staff');
+        Route::post('/update-staff/','RestaurantHomeController@updatesatff')->name('update-staff');
+
+        //RestaurantHome ROLE Controller//
+        Route::get('/role','RestaurantHomeController@role')->name('superAdmin.role');
+        Route::get('/add_role','RestaurantHomeController@addrole')->name('superAdmin.add_role');
+        Route::post('/role_insert','RestaurantHomeController@roleinsert')->name('superAdmin.role_insert');
+        Route::get('/Edit-Role/{id}','RestaurantHomeController@edit_role')->name('Edit-Role');
+        Route::get('/Delete-Role/{id}','RestaurantHomeController@delete_role')->name('Delete-Role');
+
+
 
         Route::group(['prefix' => 'settings'], function () {
             Route::get('', 'RestaurantSettingsController@showSettings')->name('restaurant.showSettings');

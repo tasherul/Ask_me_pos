@@ -75,12 +75,35 @@ $baseURL = getBaseURL();
                         </li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="briefcase"></i> <span>Staff</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('restaurant.staff')}}"><i class="fa fa-angle-double-right"></i>Add Staff</a></li>
+                        <li><a href="{{route('all-staff-restaurant')}}"><i class="fa fa-angle-double-right"></i>All Staff</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="tool"></i> <span>Roles</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('superAdmin.add_role')}}"><i class="fa fa-angle-double-right"></i>Group Role</a></li>
+                        <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>Role</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="{{route('panels.all')}}">
                         <i data-feather="coffee"></i> <span>Kitchen Panels</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="{{route('inventory_adjustments')}}">
                         <i data-feather="edit"></i> <span>Inventory Adjustments</span>

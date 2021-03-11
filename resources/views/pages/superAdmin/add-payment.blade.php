@@ -14,12 +14,13 @@ $baseURL = getBaseURL()
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="box box-primary">
-                        <form class="forms-sample">
+                    <div class="box-body">
+                        <form method="Post" action="">
                             @csrf
                             <div class="form-group">
                                 <label>Payment Methods Name</label>
-                                <input type="text" class="form-control" placeholder="Payment Methods Name">
+                                <input  type="text"  class="form-control" name="user_name"
+                                        placeholder="Name" >
                             </div>
                             <div class="form-group">
                                 <label>Describe</label>
@@ -36,7 +37,8 @@ $baseURL = getBaseURL()
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <button class="btn btn-light">Cancel</button>
+                            <a href="" role="button" class="btn btn-danger">Back
+                            </a>
                         </form>
                     </div>
                 </div>

@@ -18,11 +18,11 @@ $baseURL = getBaseURL();
                         <i data-feather="home"></i> <span>Home</span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.other_list')}}">
                         <i data-feather="list"></i> <span>Other List</span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.All-Service')}}">
                         <i data-feather="server"></i> <span>All Service</span></a>
                 </li>
                 <li>
@@ -30,19 +30,19 @@ $baseURL = getBaseURL();
                         <i data-feather="database"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.Sale')}}">
                         <i data-feather="trending-up"></i> <span>Sale</span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.Inventory')}}">
                         <i data-feather="shopping-bag"></i> <span>Inventory</span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.Inventory_Adjustment')}}">
                         <i data-feather="edit"></i> <span>Inventory Adjustment </span></a>
                 </li>
                 <li>
-                    <a href="{{route('superAdmin.dashboard')}}">
+                    <a href="{{route('superAdmin.waste')}}">
                         <i data-feather="trash-2"></i> <span>Waste</span></a>
                 </li>
 
@@ -66,7 +66,7 @@ $baseURL = getBaseURL();
                     <a href="{{route('superAdmin.dashboard')}}">
                         <i data-feather="bar-chart-2"></i> <span>Adjustment</span></a>
                 </li>
-                <li class="treeview">
+                {{--<li class="treeview">
                     <a href="#">
                         <i data-feather="tool"></i> <span>Roles</span>
                         <span class="pull-right-container">
@@ -77,10 +77,39 @@ $baseURL = getBaseURL();
                         <li><a href="{{route('superAdmin.add_role')}}"><i class="fa fa-angle-double-right"></i>Group Role</a></li>
                         <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>Role</a></li>
                     </ul>
-                </li>
-                <li>
+                </li>--}}
+                {{--<li class="treeview">
+                    <a href="#">
+                        <i data-feather="briefcase"></i> <span>Staff</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('superAdmin.Staff')}}"><i class="fa fa-angle-double-right"></i>Add Staff</a></li>
+                        <li><a href="{{route('superAdmin.role')}}"><i class="fa fa-angle-double-right"></i>All Staff</a></li>
+                    </ul>
+                </li>--}}
+
+                <li class="treeview">
                     <a href="{{route('superAdmin.settings')}}">
-                        <i data-feather="settings"></i> <span>Settings</span></a>
+                        <i data-feather="settings"></i> <span>Settings</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="*"><i class="fa fa-angle-double-right"></i>Google Map API setting</a></li>
+                        <li><a href="*"><i class="fa fa-angle-double-right"></i>Payment Gateway Setting</a></li>
+                        <li><a href="{{route('countries.index')}}"><i class="fa fa-angle-double-right"></i>Countries</a></li>
+                        <li><a href="{{route('states.index')}}"><i class="fa fa-angle-double-right"></i>States</a></li>
+                        <li><a href="{{route('cities.index')}}"><i class="fa fa-angle-double-right"></i>Cities</a></li>
+                        <li><a href="{{route('cuisines.index')}}"><i class="fa fa-angle-double-right"></i>Cuisines</a></li>
+                        <li><a href="{{route('privacyPolicies.show')}}"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+                        <li><a href="{{route('social-media.index')}}"><i class="fa fa-angle-double-right"></i>Social Media</a></li>
+                        <li><a href="{{route('third-party-vendors.index')}}"><i class="fa fa-angle-double-right"></i>3rd Parties Venders</a></li>
+                        <li><a href="{{route('charges.index')}}"><i class="fa fa-angle-double-right"></i>Fee Charges</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="{{route('superAdmin.restaurantList')}}">

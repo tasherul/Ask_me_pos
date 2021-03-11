@@ -38,7 +38,7 @@ $baseURL = getBaseURL()
                                     <th class="title" style="width: 10%">Purchase Price</th>
                                     <th class="title" style="width: 10%">Alert Quantity/Amount</th>
                                     <th class="title" style="width: 10%">Current Stock</th>
-                                    <th class="title" style="width: 15%">Added By</th>
+                                    {{--<th class="title" style="width: 15%">Added By</th>--}}
                                     <th class="title" style="width: 20%">Action</th>
                                 </tr>
                                 </thead>
@@ -54,7 +54,7 @@ $baseURL = getBaseURL()
                                             <td>${{$v->purchase_price}}</td>
                                             <td>{{$v->alert_quantity}}</td>
                                             <td>{{$v->current_stock}}</td>
-                                            <td>{{$v->creatorInfo->manager_name}}</td>
+                                            {{--<td>{{$v->creatorInfo->manager_name}}</td>--}}
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-light btn-fill dropdown-toggle"
