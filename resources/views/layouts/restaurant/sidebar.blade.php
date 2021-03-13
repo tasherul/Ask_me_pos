@@ -105,6 +105,10 @@ $baseURL = getBaseURL();
                     </a>
                 </li>
                 <li>
+                    <a href="{{route('payment-method')}}">
+                        <i data-feather="credit-card"></i> <span>Payment Methods</span></a>
+                </li>
+                <li>
                     <a href="{{route('inventory_adjustments')}}">
                         <i data-feather="edit"></i> <span>Inventory Adjustments</span>
                     </a>

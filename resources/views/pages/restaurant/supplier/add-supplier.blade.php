@@ -23,9 +23,18 @@ $baseURL = getBaseURL()
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Supplier <span class="required_star">*</span></label>
+                                        <label>Select Supplier <span class="required_star">*</span></label>
                                         <select name="" class="form-control">
                                             <option value="">Select Supplier</option>
+                                            @foreach($all_data as $V_all)
+                                                <option value="{{$V_all->id}}">{{$V_all->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Payment <span class="required_star">*</span></label>
+                                        <select name="" class="form-control">
+                                            <option value="">Select Payment</option>
                                             <option value="">Name</option>
                                         </select>
                                     </div>
@@ -38,7 +47,7 @@ $baseURL = getBaseURL()
                                             <label>Payment </label>
                                             <input type="text"  class="form-control" placeholder="" value="">
                                     </div>
-                                    
+
                                     <div class="form-group">
                                             <label>Note </label>
                                             <input type="text"  class="form-control" placeholder="" value="">
@@ -62,7 +71,7 @@ $baseURL = getBaseURL()
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    
+
 
     <script src="{!! $baseURL.'resources/assets/js/custom/restaurant/foodMenuCategories.js'!!}"></script>
 @endsection

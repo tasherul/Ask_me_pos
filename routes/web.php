@@ -247,6 +247,12 @@ Route::group(['middleware' => ['XSS']], function () {
 
             Route::post('/food-menu-SubCatagory.insert', 'RestaurantFoodMenuCategoriesController@save_subcatagory')->name('food-menu-SubCatagory.insert');
 
+            //Payment Method Controller
+            Route::get('/payment-method','RestaurantFoodMenuCategoriesController@paymentmethod')->name('payment-method');
+            Route::get('/add-method','RestaurantFoodMenuCategoriesController@addmethod')->name('add-method');
+            Route::post('/pay-method','RestaurantFoodMenuCategoriesController@paymethod')->name('pay-method');
+            Route::get('/Delete-Methord/{id}', 'RestaurantFoodMenuCategoriesController@deletemethod')->name('Delete-Methord');
+
 
 
             Route::resource('food-menu-modifiers', 'RestaurantFoodMenuModifiersController');

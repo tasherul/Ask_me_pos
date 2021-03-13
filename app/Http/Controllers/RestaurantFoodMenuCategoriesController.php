@@ -212,7 +212,7 @@ class RestaurantFoodMenuCategoriesController extends Controller
         ->where('tbl_under_sub_catagory.catagory_id','=',$id)
             ->join('table_sub_category', 'table_sub_category.id', '=', 'tbl_under_sub_catagory.catagory_id')
             ->join('tbl_restaurant_food_menu_categories', 'tbl_restaurant_food_menu_categories.id', '=', 'tbl_under_sub_catagory.sub_catagory_id')
-            
+
             ->select('table_sub_category.name as cat_name', 'tbl_restaurant_food_menu_categories.name', 'tbl_under_sub_catagory.id')->get();
 
         $catagory_id = $id;
@@ -234,8 +234,13 @@ class RestaurantFoodMenuCategoriesController extends Controller
     }
     public function add_supplier_dues()
     {
+        $add_by = Auth::guard('restaurantUser')->user()->restaurant_id;
+        $all_data=DB::table('tbl_restaurant_suppliers')
+            ->where('restaurant_id','=',$add_by)
+            ->get();
 
-        return view('pages.restaurant.supplier.add-supplier');
+
+       return view('pages.restaurant.supplier.add-supplier',compact('all_data'));
     }
     public function save_subcatagory(Request $request)
     {
@@ -316,4 +321,35 @@ class RestaurantFoodMenuCategoriesController extends Controller
         //return redirect('restaurant/sale/Add-Category/'.$req)->with('success','sucessfully deleted.');
         return back()->with('success','sucessfully deleted.');
     }
+
+    public function paymentmethod(){
+       $allmethod=DB::table('tbl_restaurant_payment_method')->get();
+
+       return view('pages.restaurant.payment.payment',compact('allmethod'));
+    }
+    public function addmethod(){
+        return view('pages.restaurant.payment.add-payment');
+    }
+    public function paymethod(Request $request){
+        $add_by = Auth::guard('restaurantUser')->id();
+        $data = array(
+            'Methord' => $request->Methord,
+            'Discription' => $request->Discription,
+            'added_by' => $add_by,
+        );
+        DB::table('tbl_restaurant_payment_method')->insert($data);
+
+        return redirect('restaurant/sale/payment-method');
+    }
+    public function deletemethod($id){
+        DB::table('tbl_restaurant_payment_method')->where('id', $id)->delete();
+        return back();
+    }
+    public function edit($id){
+        $all_data=DB::table('tbl_restaurant_payment_method')
+            ->where('id',$id)
+            ->first();
+        return view('pages.superAdmin.edit_role',compact('all_data'));
+    }
+
 }

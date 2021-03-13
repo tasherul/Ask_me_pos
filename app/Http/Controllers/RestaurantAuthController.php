@@ -129,12 +129,12 @@ class RestaurantAuthController extends Controller
      */
     public function doLogin(Request $request)
     {
-                
-        $this->validate($request, [
-            'id' => 'required',
-            'email' => 'required|email:rfc,dns,strict',
-            'password' => 'required'
-        ]);
+
+//        $this->validate($request, [
+//            'id' => 'required',
+//            'email' => 'required|email:rfc,dns,strict',
+//            'password' => 'required'
+//        ]);
 
 //        $primaryCredential = ['restaurant_id' => $request->id];
         $secondaryCredentials = ['manager_email' => $request->email, 'password' => $request->password];
